@@ -19,6 +19,7 @@
 
 Questo progetto web si propone di rendere accessibili in modo più fluido e semplice i dati del Catasto Fiorentino del 1427/29 raccolti da Klapisch-Zuber nel suo noto volume "Tuscans and Their Families: A Study of the Florentine Catasto of 1427"
 e digitalizzati in formato excel dagli stessi in seguito Presso questo [link](https://journals.openedition.org/acrh/7458)
+
 ---
 
 ## ✨ Funzionalità Principali
@@ -152,5 +153,3 @@ Assicurati di aggiornare le variabili d'ambiente nei rispettivi pannelli di cont
 <p>Sviluppato con passione per la storia e la tecnologia.</p>
 </div>
 
-```
-```
