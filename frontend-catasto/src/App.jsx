@@ -6,26 +6,29 @@ import {
   ArrowUp, ArrowDown, ArrowUpDown, FileText, Bookmark, List, Calculator
 } from 'lucide-react';
 
-// --- CONFIGURAZIONE URL API PER PRODUZIONE ---
-// Se VITE_API_URL è definito (in produzione su Vercel), usa quello. 
-// Altrimenti usa localhost per lo sviluppo locale.
+// --- CONFIGURAZIONE URL API ---
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export default function App() {
+  // --- STATI UI ---
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  // --- REFS PER SCROLL ---
   const tableRowsRef = useRef({}); 
   const mainContentRef = useRef(null); 
 
-  // Stati Ricerca
+  // --- STATI DI RICERCA ---
   const [searchPersona, setSearchPersona] = useState('');
   const [searchLocalita, setSearchLocalita] = useState('');
   
-  // Filtri
+  // Filtri Dropdown
   const [filterMestiere, setFilterMestiere] = useState('');
   const [filterBestiame, setFilterBestiame] = useState('');
   const [filterImmigrazione, setFilterImmigrazione] = useState(''); 
   const [filterRapporto, setFilterRapporto] = useState('');         
+  
+  // Filtri Range Economici
   const [filterFortuneMin, setFilterFortuneMin] = useState('');
   const [filterFortuneMax, setFilterFortuneMax] = useState('');
   const [filterCreditoMin, setFilterCreditoMin] = useState('');     
@@ -37,27 +40,36 @@ export default function App() {
   const [filterDeduzioniMin, setFilterDeduzioniMin] = useState(''); 
   const [filterDeduzioniMax, setFilterDeduzioniMax] = useState('');
 
+  // Ordinamento
   const [sortBy, setSortBy] = useState('nome'); 
   const [sortOrder, setSortOrder] = useState('ASC'); 
 
-  // Dati
+  // --- DATI ---
   const [page, setPage] = useState(1);
+  const ROWS_PER_PAGE = 50; // Costante per i calcoli
   const [totalPages, setTotalPages] = useState(1);
   const [totalRecords, setTotalRecords] = useState(0);
+  
   const [data, setData] = useState([]);
   const [sidebarData, setSidebarData] = useState([]);
+  
   const [loading, setLoading] = useState(false);
   const [sidebarLoading, setSidebarLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const [expandedId, setExpandedId] = useState(null);
   const [parentiData, setParentiData] = useState([]);
   const [loadingParenti, setLoadingParenti] = useState(false);
 
-  // Opzioni
+  // NUOVO STATO: ID verso cui scrollare dopo il cambio pagina
+  const [targetScrolledId, setTargetScrolledId] = useState(null);
+
+  // Opzioni Menu
   const bestiameOptions = [{ id: 0, label: "Non specificato" },{ id: 1, label: "Proprietario di bovini" },{ id: 2, label: "Affittuario di bovini" },{ id: 3, label: "Proprietario e affittuario" },{ id: 4, label: "Solo bestiame minuto" },{ id: 5, label: "Animali da tiro/soma" }];
   const immigrazioneOptions = [{ id: 0, label: "Non specificato" },{ id: 1, label: "Cittadino" },{ id: 2, label: "Forestiero" },{ id: 3, label: "Abitante del Contado" }];
   const rapportoOptions = [{ id: 0, label: "Non specificato" },{ id: 1, label: "Maestro" },{ id: 2, label: "Lavorante / Garzone" },{ id: 3, label: "Apprendista" },{ id: 4, label: "Socio" }];
 
+  // Helper Params
   const buildParams = () => {
     const params = new URLSearchParams();
     if (searchPersona) params.append('q_persona', searchPersona);
@@ -66,6 +78,7 @@ export default function App() {
     if (filterBestiame) params.append('bestiame', filterBestiame);
     if (filterImmigrazione) params.append('immigrazione', filterImmigrazione);
     if (filterRapporto) params.append('rapporto', filterRapporto);
+    
     if (filterFortuneMin) params.append('fortune_min', filterFortuneMin);
     if (filterFortuneMax) params.append('fortune_max', filterFortuneMax);
     if (filterCreditoMin) params.append('credito_min', filterCreditoMin);
@@ -76,11 +89,13 @@ export default function App() {
     if (filterImponibileMax) params.append('imponibile_max', filterImponibileMax);
     if (filterDeduzioniMin) params.append('deduzioni_min', filterDeduzioniMin);
     if (filterDeduzioniMax) params.append('deduzioni_max', filterDeduzioniMax);
+
     params.append('sort_by', sortBy);
     params.append('order', sortOrder);
     return params;
   };
 
+  // --- FETCH DATI TABELLA ---
   const fetchData = async (pageNum = 1) => {
     setLoading(true);
     setError(null);
@@ -90,9 +105,8 @@ export default function App() {
     try {
       const params = buildParams();
       params.append('page', pageNum);
-      params.append('limit', 50);
+      params.append('limit', ROWS_PER_PAGE);
 
-      // USO DI API_URL
       const response = await fetch(`${API_URL}/api/catasto?${params.toString()}`);
       if (!response.ok) throw new Error('Errore server');
       const result = await response.json();
@@ -103,17 +117,17 @@ export default function App() {
       setPage(pageNum);
     } catch (err) {
       console.error(err);
-      setError("Impossibile connettersi al Server. Assicurati che sia attivo.");
+      setError("Impossibile connettersi al Server.");
     } finally {
       setLoading(false);
     }
   };
 
+  // --- FETCH SIDEBAR ---
   const fetchSidebarData = async () => {
     setSidebarLoading(true);
     try {
       const params = buildParams();
-      // USO DI API_URL
       const response = await fetch(`${API_URL}/api/catasto/sidebar?${params.toString()}`);
       if (!response.ok) throw new Error('Errore sidebar');
       const result = await response.json();
@@ -122,6 +136,7 @@ export default function App() {
     finally { setSidebarLoading(false); }
   };
 
+  // TRIGGER FETCH INIZIALE E FILTRI
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchData(1);
@@ -136,6 +151,24 @@ export default function App() {
     filterDeduzioniMin, filterDeduzioniMax,
     sortBy, sortOrder
   ]);
+
+  // --- NUOVO: EFFETTO PER SCROLLARE DOPO IL CARICAMENTO ---
+  // Questo useEffect "ascolta" quando i dati della tabella cambiano.
+  // Se c'è un 'targetScrolledId' in attesa, esegue lo scroll.
+  useEffect(() => {
+    if (targetScrolledId && !loading && data.length > 0) {
+      const rowElement = tableRowsRef.current[targetScrolledId];
+      if (rowElement) {
+        rowElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Apri i dettagli automaticamente
+        handleRowClick(targetScrolledId);
+      }
+      // Resetta il target
+      setTargetScrolledId(null);
+    }
+    // eslint-disable-next-line
+  }, [data, loading, targetScrolledId]);
+
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
@@ -169,7 +202,6 @@ export default function App() {
     setParentiData([]); 
 
     try {
-      // USO DI API_URL
       const response = await fetch(`${API_URL}/api/parenti/${idFuoco}`);
       if (!response.ok) throw new Error('Errore parenti');
       const result = await response.json();
@@ -178,11 +210,27 @@ export default function App() {
     finally { setLoadingParenti(false); }
   };
 
+  // --- LOGICA MODIFICATA PER CLICK SIDEBAR ---
   const handleSidebarClick = (idFuoco) => {
-    const rowElement = tableRowsRef.current[idFuoco];
-    handleRowClick(idFuoco);
-    if (rowElement) {
-      rowElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // 1. Trova l'indice di questo elemento nella lista completa della sidebar
+    const index = sidebarData.findIndex(item => item.id === idFuoco);
+    
+    if (index !== -1) {
+      // 2. Calcola in quale pagina si trova (es. indice 55 / 50 = pag 1.x -> ceil -> pag 2)
+      // Nota: gli indici partono da 0, quindi indice 0-49 è pagina 1.
+      const targetPage = Math.floor(index / ROWS_PER_PAGE) + 1;
+
+      // 3. Se siamo già sulla pagina giusta, scrolla e apri subito
+      if (targetPage === page) {
+        const rowElement = tableRowsRef.current[idFuoco];
+        if (rowElement) rowElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        handleRowClick(idFuoco);
+      } else {
+        // 4. Se è un'altra pagina, imposta la pagina e il target.
+        // L'useEffect sopra (riga 148) farà lo scroll appena i dati arriveranno.
+        setTargetScrolledId(idFuoco);
+        handlePageChange(targetPage);
+      }
     }
   };
 
@@ -212,9 +260,13 @@ export default function App() {
           <div className="flex-1 overflow-y-auto p-2 space-y-1">
             {sidebarLoading ? (<div className="p-4 text-center text-sm text-gray-500 italic">Caricamento indice...</div>) : sidebarData.length > 0 ? (
               sidebarData.map((row) => (
-                <button key={`idx-${row.id}`} onClick={() => handleSidebarClick(row.id)} className={`w-full text-left p-2 rounded text-sm transition-colors border border-transparent ${expandedId === row.id ? 'bg-[#8b4513] text-white border-[#5d2e0c] shadow-sm' : 'hover:bg-[#e6dbcf] text-[#2c1810] border-b-gray-100'}`}>
+                <button 
+                  key={`idx-${row.id}`} 
+                  onClick={() => handleSidebarClick(row.id)} 
+                  className={`w-full text-left p-2 rounded text-sm transition-colors border border-transparent ${expandedId === row.id || targetScrolledId === row.id ? 'bg-[#8b4513] text-white border-[#5d2e0c] shadow-sm' : 'hover:bg-[#e6dbcf] text-[#2c1810] border-b-gray-100'}`}
+                >
                   <div className="font-bold truncate font-serif">{row.nome}</div>
-                  <div className={`text-xs truncate ${expandedId === row.id ? 'text-[#e6c288]' : 'text-gray-500'}`}>{row.mestiere || "Nessun mestiere"}</div>
+                  <div className={`text-xs truncate ${expandedId === row.id || targetScrolledId === row.id ? 'text-[#e6c288]' : 'text-gray-500'}`}>{row.mestiere || "Nessun mestiere"}</div>
                 </button>
               ))
             ) : (<div className="p-4 text-center text-sm text-gray-400">Nessun risultato.</div>)}
