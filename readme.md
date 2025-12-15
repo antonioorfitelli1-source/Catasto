@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>📜 Catasto Storico</h1>
+  <h1>📜 Catasto Fiorentino del 1427/29 </h1>
   <h3>Sistema Digitale di Consultazione dei Registri dei Fuochi</h3>
   <p>Un'applicazione Full-Stack per l'esplorazione, la ricerca e l'analisi di dati censuari storici.</p>
 
@@ -18,7 +18,8 @@
 ## 📖 Descrizione del Progetto
 
 Questo progetto web si propone di rendere accessibili in modo più fluido e semplice i dati del Catasto Fiorentino del 1427/29 raccolti da Klapisch-Zuber nel suo noto volume "Tuscans and Their Families: A Study of the Florentine Catasto of 1427"
-e digitalizzati in formato excel dagli stessi in seguito Presso questo [link](https://journals.openedition.org/acrh/7458)
+e digitalizzati in formato excel dalla stessa in seguito Presso questo [link](https://journals.openedition.org/acrh/7458)
+
 ---
 
 ## ✨ Funzionalità Principali
@@ -152,5 +153,3 @@ Assicurati di aggiornare le variabili d'ambiente nei rispettivi pannelli di cont
 <p>Sviluppato con passione per la storia e la tecnologia.</p>
 </div>
 
-```
-```
