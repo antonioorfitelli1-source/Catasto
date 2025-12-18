@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import Header from '../components/layout/Header';
 import Sidebar from '../components/layout/Sidebar';
 import FilterPanel from '../components/catasto/FilterPanel';
@@ -67,15 +67,14 @@ export default function HomePage() {
     }
   }, [data, loading, targetScrolledId]); // eslint-disable-line
 
-  const handlePageChange = (newPage) => {
+  const handlePageChange = useCallback((newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
-      setPage(newPage); // This will trigger fetch in useCatastoData
+      setPage(newPage); 
       if (mainContentRef.current) mainContentRef.current.scrollTop = 0;
     }
-  };
+  }, [totalPages, setPage]);
 
-  const handleSidebarClick = (idFuoco) => {
-    // Chiudi la sidebar su mobile quando si clicca un elemento
+  const handleSidebarClick = useCallback((idFuoco) => {
     if (window.innerWidth < 768) {
       setIsSidebarOpen(false);
     }
@@ -93,7 +92,7 @@ export default function HomePage() {
         handlePageChange(targetPage);
       }
     }
-  };
+  }, [sidebarData, page, handlePageChange, handleRowClick]);
 
   return (
     <div className="h-screen flex flex-col bg-[#f8f5f2] text-slate-800 font-serif overflow-hidden">

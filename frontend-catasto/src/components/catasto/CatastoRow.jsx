@@ -125,4 +125,4 @@ const CatastoRow = forwardRef(({ row, expanded, onRowClick, loadingParenti, pare
   );
 });
 
-export default CatastoRow;
+export default React.memo(CatastoRow);

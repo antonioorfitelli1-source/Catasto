@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, ChevronLeft } from 'lucide-react';
 
-export default function Sidebar({ 
+export default React.memo(function Sidebar({ 
     isSidebarOpen, 
     setIsSidebarOpen, 
     sidebarLoading, 
@@ -66,4 +66,4 @@ export default function Sidebar({
       </aside>
     </>
   );
-}
+});

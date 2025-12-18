@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { fetchCatastoData, fetchParentiData } from "../api/catastoService";
 
 export function useCatastoData(filters) {
@@ -50,44 +50,50 @@ export function useCatastoData(filters) {
   // Let's refactor: The hook shouldn't automatically fetch on mount if we want to precise control,
   // but for this refactor we want to mimic original behavior.
 
-  const fetchData = async (pageNum = 1) => {
-    setLoading(true);
-    setError(null);
-    setExpandedId(null);
-
-    try {
-      const result = await fetchCatastoData(filters, pageNum, 50); // 50 is hardcoded ROWS_PER_PAGE
-      setData(result.data);
-      setTotalPages(result.pagination.totalPages);
-      setTotalRecords(result.pagination.total);
-      setPage(pageNum);
-    } catch (err) {
-      console.error(err);
-      setError("Impossibile connettersi al Server.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleRowClick = async (idFuoco) => {
-    if (expandedId === idFuoco) {
+  const fetchData = useCallback(
+    async (pageNum = 1) => {
+      setLoading(true);
+      setError(null);
       setExpandedId(null);
-      setParentiData([]);
-      return;
-    }
-    setExpandedId(idFuoco);
-    setLoadingParenti(true);
-    setParentiData([]);
 
-    try {
-      const result = await fetchParentiData(idFuoco);
-      setParentiData(result);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoadingParenti(false);
-    }
-  };
+      try {
+        const result = await fetchCatastoData(filters, pageNum, 50);
+        setData(result.data);
+        setTotalPages(result.pagination.totalPages);
+        setTotalRecords(result.pagination.total);
+        setPage(pageNum);
+      } catch (err) {
+        console.error(err);
+        setError("Impossibile connettersi al Server.");
+      } finally {
+        setLoading(false);
+      }
+    },
+    [filters]
+  );
+
+  const handleRowClick = useCallback(
+    async (idFuoco) => {
+      if (expandedId === idFuoco) {
+        setExpandedId(null);
+        setParentiData([]);
+        return;
+      }
+      setExpandedId(idFuoco);
+      setLoadingParenti(true);
+      setParentiData([]);
+
+      try {
+        const result = await fetchParentiData(idFuoco);
+        setParentiData(result);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoadingParenti(false);
+      }
+    },
+    [expandedId]
+  );
 
   return {
     data,

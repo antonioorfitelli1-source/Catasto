@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export function useCatastoFilters() {
   // Search
@@ -27,14 +27,17 @@ export function useCatastoFilters() {
   const [sortBy, setSortBy] = useState("nome");
   const [sortOrder, setSortOrder] = useState("ASC");
 
-  const handleSort = (columnKey) => {
-    if (sortBy === columnKey) {
-      setSortOrder((prev) => (prev === "ASC" ? "DESC" : "ASC"));
-    } else {
-      setSortBy(columnKey);
-      setSortOrder("ASC");
-    }
-  };
+  const handleSort = useCallback(
+    (columnKey) => {
+      if (sortBy === columnKey) {
+        setSortOrder((prev) => (prev === "ASC" ? "DESC" : "ASC"));
+      } else {
+        setSortBy(columnKey);
+        setSortOrder("ASC");
+      }
+    },
+    [sortBy]
+  );
 
   const getFilters = () => ({
     searchPersona,
@@ -56,6 +59,10 @@ export function useCatastoFilters() {
     sortBy,
     sortOrder,
   });
+
+  // We don't really need getFilters function if we expose all states
+  // But keeping it for now if logic relies on it.
+  // Ideally, consumers should construct the filter object memoized (as we did in HomePage).
 
   return {
     // States
@@ -96,6 +103,5 @@ export function useCatastoFilters() {
 
     // Actions
     handleSort,
-    getFilters,
   };
 }
