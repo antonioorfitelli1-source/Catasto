@@ -7,12 +7,11 @@ import { useCatastoFilters } from '../hooks/useCatastoFilters';
 import { useCatastoData } from '../hooks/useCatastoData';
 import { useCatastoSidebar } from '../hooks/useCatastoSidebar';
 
-export const darkMode = document
-  document.documentElement.classlist.toggle
-    'dark',
-    localStorage.theme === 'dark' ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
+export const darkMode = document.documentElement.classList.toggle
+  'dark',
+  localStorage.theme === 'dark' ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
 
 export default function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth >= 768);
