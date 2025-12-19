@@ -23,16 +23,16 @@ export default function CatastoTable({
 
   const renderSortIcon = (columnKey) => {
     if (sortBy !== columnKey) return <ArrowUpDown className="h-4 w-4 text-gray-300 ml-1" />;
-    return sortOrder === 'ASC' ? <ArrowUp className="h-4 w-4 text-[#8b4513] ml-1" /> : <ArrowDown className="h-4 w-4 text-[#8b4513] ml-1" />;
+    return sortOrder === 'ASC' ? <ArrowUp className="h-4 w-4 text-skin-header ml-1" /> : <ArrowDown className="h-4 w-4 text-skin-header ml-1" />;
   };
 
   return (
     <div className="space-y-4 pb-12">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-[#d3c4b1] pb-2 gap-2">
-        <h2 className="text-lg md:text-xl font-bold text-[#5d2e0c] flex items-center gap-2 font-serif">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-skin-border pb-2 gap-2">
+        <h2 className="text-lg md:text-xl font-bold text-skin-header-border flex items-center gap-2 font-serif">
             <BookOpen className="h-5 w-5 md:h-6 md:w-6" /> Registri Fuochi
         </h2>
-        <span className="bg-[#e6c288] text-[#5d2e0c] px-2 py-1 md:px-3 text-xs md:text-sm font-bold rounded-full">
+        <span className="bg-skin-text-accent text-skin-header-border px-2 py-1 md:px-3 text-xs md:text-sm font-bold rounded-full">
             {totalRecords} Risultati
         </span>
         </div>
@@ -42,27 +42,27 @@ export default function CatastoTable({
             <p className="font-bold">Errore Server</p><p>{error}</p>
         </div>
         ) : (
-        <div className="bg-white shadow-lg border border-[#d3c4b1]">
+        <div className="bg-skin-table-row shadow-lg border border-skin-border">
             <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-[#e5e0d8]">
-                <thead className="bg-[#f0ece6]">
+            <table className="min-w-full divide-y divide-skin-border-light">
+                <thead className="bg-skin-table-header">
                 <tr>
-                    <th onClick={() => handleSort('nome')} className="px-3 py-3 md:px-6 md:py-4 text-left text-xs font-bold text-[#5d2e0c] uppercase tracking-wider font-sans cursor-pointer hover:bg-[#e6dbcf] group">
+                    <th onClick={() => handleSort('nome')} className="px-3 py-3 md:px-6 md:py-4 text-left text-xs font-bold text-skin-header-border uppercase tracking-wider font-sans cursor-pointer hover:bg-skin-table-row-hover group">
                     <div className="flex items-center gap-1">Capofamiglia{renderSortIcon('nome')}</div>
                     </th>
-                    <th onClick={() => handleSort('localita')} className="px-3 py-3 md:px-6 md:py-4 text-left text-xs font-bold text-[#5d2e0c] uppercase tracking-wider font-sans cursor-pointer hover:bg-[#e6dbcf] group">
+                    <th onClick={() => handleSort('localita')} className="px-3 py-3 md:px-6 md:py-4 text-left text-xs font-bold text-skin-header-border uppercase tracking-wider font-sans cursor-pointer hover:bg-skin-table-row-hover group">
                     <div className="flex items-center gap-1">Località{renderSortIcon('localita')}</div>
                     </th>
-                    <th onClick={() => handleSort('fortune')} className="px-3 py-3 md:px-6 md:py-4 text-left text-xs font-bold text-[#5d2e0c] uppercase tracking-wider font-sans cursor-pointer hover:bg-[#e6dbcf] group">
+                    <th onClick={() => handleSort('fortune')} className="px-3 py-3 md:px-6 md:py-4 text-left text-xs font-bold text-skin-header-border uppercase tracking-wider font-sans cursor-pointer hover:bg-skin-table-row-hover group">
                     <div className="flex items-center gap-1">Dati Sintetici{renderSortIcon('fortune')}</div>
                     </th>
-                    <th className="hidden md:table-cell px-6 py-4 text-left text-xs font-bold text-[#5d2e0c] uppercase tracking-wider font-sans">
+                    <th className="hidden md:table-cell px-6 py-4 text-left text-xs font-bold text-skin-header-border uppercase tracking-wider font-sans">
                     Riferimenti
                     </th>
                     <th className="px-3 py-3 md:px-6 md:py-4 w-8 md:w-10"></th>
                 </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-[#e5e0d8]">
+                <tbody className="bg-skin-table-row divide-y divide-skin-border-light">
                 {loading ? (
                     [...Array(5)].map((_, i) => (<tr key={i} className="animate-pulse"><td className="px-6 py-4" colSpan="5"><div className="h-8 bg-gray-200 rounded"></div></td></tr>))
                 ) : data.length > 0 ? (
