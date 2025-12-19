@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, X, Scroll } from 'lucide-react';
 
-export default function Header({ isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode }) {
+export default function Header({ isSidebarOpen, setIsSidebarOpen, darkMode, toggleDarkMode }) {
   return (
     <header className="bg-skin-header text-skin-text-inverted shadow-md border-b-4 border-skin-header-border flex-shrink-0 z-20 h-16 md:h-20 transition-all">
       <div className="w-full px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
@@ -21,19 +21,23 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen, isDarkMode, se
             <p className="text-[10px] md:text-xs text-skin-text-accent uppercase tracking-wider hidden sm:block">Sistema di Consultazione</p>
           </div>
         </div>
+    <div className="flex items-center gap-2">
         <div className="flex items-center gap-2 text-[10px] md:text-xs bg-skin-header-border px-2 py-1 md:px-3 rounded text-skin-text-accent whitespace-nowrap">
           <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"></span>
           <span className="hidden sm:inline">Server</span> Live
         </div>
-      </div>
-      <button
-      onClick={() => setIsDarkMode(!isDarkMode)}
-      className="flex justify-end items-center gap-2"> 
-      <label className="relative mb-5 cursor-pointer">
-            <input type="checkbox" value="" className="peer sr-only" />
-            <div className="peer h-5 w-9 rounded-full bg-gray-400 after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-indigo-900 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-200"></div>
-      </label>
-      </button>
+        <label className="relative inline-flex items-center cursor-pointer">
+            <input 
+              type="checkbox" 
+              checked={darkMode} 
+              onChange={() => toggleDarkMode(!darkMode)} // Inverte il valore attuale
+              className="sr-only peer" 
+            />
+            <div className="w-11 h-6 bg-gray-400 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-900"></div>
+            <span className="ml-2 text-[10px] md:text-xs text-skin-text-accent">Dark Mode</span>
+          </label>
+    </div>
+      </div>   
     </header>
   );
 }
