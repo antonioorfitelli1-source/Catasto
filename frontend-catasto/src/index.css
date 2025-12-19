@@ -8,14 +8,13 @@
  --color-skin-header-accent: var(--color-bg-header-accent);
  --color-skin-header-border: var(--color-bg-header-border);
  --color-skin-sidebar: var(--color-bg-sidebar);
- --color-skin-sidebar-main: var(--color-sidebar-main);
+ --color-skin-sidebar-header: var(--color-bg-sidebar-header);
  --color-skin-item-hover: var(--color-item-hover);
- --color-skin-item-selected: var(--color-item-selected);
+ --color-skin-sidebar-selected: var(--color-bg-sidebar-selected);
  --color-skin-text-inverted: var(--color-text-inverted);
  --color-skin-text-accent: var(--color-text-accent);
  --color-skin-border: var(--color-border);
  --color-skin-border-dark: var(--color-border-dark);
- --color-skin-sidebar-selected: var(--color-bg-sidebar-selected);
  --color-skin-text-selected: var(--color-text-selected);
  --color-skin-display: var(--color-bg-display);
  --color-skin-table-row: var(--color-bg-table-row);
@@ -28,6 +27,7 @@
   /* Color Palette */
   --color-bg-main: #f8f5f2;
   --color-bg-sidebar: #fffbf5;
+  --color-bg-sidebar-header: #fffbf5;
   --color-bg-header: #8b4513;
   --color-bg-header-accent: #6e360f;
   --color-bg-header-border: #5d2e0c;
@@ -75,6 +75,7 @@
 
   --color-bg-main: #000000;
   --color-bg-sidebar: #241d18;
+  --color-bg-sidebar-header: #241d18;
   --color-bg-header: #790000;
   --color-bg-header-accent: #8f3e00;
   --color-bg-header-border: #2a1506;

@@ -20,6 +20,21 @@ export default function HomePage() {
   const mainContentRef = useRef(null);
   const [targetScrolledId, setTargetScrolledId] = useState(null);
 
+  const [darkMode, setDarkMode] = useState(() => {
+    return document.documentElement.classList.contains('dark');
+  });
+
+  const toggleDarkMode = useCallback((isDark) => {
+    setDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
+    }
+  }, []);
+
   // Custom Hooks
   const filters = useCatastoFilters();
   // Memoize filter object to prevent infinite loops in hooks
@@ -103,7 +118,12 @@ export default function HomePage() {
   return (
     <div className="h-screen flex flex-col bg-skin-fill text-skin-text font-serif overflow-hidden">
 
-      <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+      <Header 
+        isSidebarOpen={isSidebarOpen} 
+        setIsSidebarOpen={setIsSidebarOpen} 
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
 
       <div className="flex flex-1 overflow-hidden relative">
 

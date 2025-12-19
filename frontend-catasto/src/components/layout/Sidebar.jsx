@@ -67,8 +67,8 @@ export default React.memo(function Sidebar({
           className={`
             w-full text-left p-2 rounded text-sm transition-colors border border-transparent h-full flex flex-col justify-center
             ${isSelected
-              ? 'bg-skin-selected text-skin-text-inverted border-skin-selected shadow-sm'
-              : 'hover:bg-skin-hover text-skin-text border-b-gray-100'}
+              ? 'bg-skin-sidebar-selected text-skin-text-inverted border-skin-sidebar-selected shadow-sm'
+              : 'hover:bg-skin-item-hover text-skin-text border-b-skin-border-light'}
           `}
         >
           <div className="font-bold truncate font-serif">{row.nome}</div>
