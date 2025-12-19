@@ -15,6 +15,8 @@
  --color-skin-text-accent: var(--color-text-accent);
  --color-skin-border: var(--color-border);
  --color-skin-border-dark: var(--color-border-dark)
+ --color-skin-sidebar-selected: var(--color-bg-sidebar-selected);
+ --color-skin-text-selected: var(--color-text-selected);
 }
 :root {
   
@@ -25,9 +27,11 @@
   --color-bg-header-accent: #6e360f;
   --color-bg-header-border: #5d2e0c;
 
+  --color-bg-sidebar-selected: #8b4513;
   --color-text-main: #2c1810;
   --color-text-inverted: #f8f5f2;
   --color-text-accent: #e6c288;
+  --color-text-selected: #ffee00;
 
   --color-border: #d3c4b1;
   --color-border-dark: #5d2e0c;
