@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, X, Scroll } from 'lucide-react';
 
-export default function Header({ isSidebarOpen, setIsSidebarOpen }) {
+export default function Header({ isSidebarOpen, setIsSidebarOpen, isDarkMode, setIsDarkMode }) {
   return (
     <header className="bg-skin-header text-skin-text-inverted shadow-md border-b-4 border-skin-header-border flex-shrink-0 z-20 h-16 md:h-20 transition-all">
       <div className="w-full px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
@@ -26,6 +26,14 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen }) {
           <span className="hidden sm:inline">Server</span> Live
         </div>
       </div>
+      <button
+      onClick={() => setIsDarkMode(!isDarkMode)}
+      className="flex justify-end items-center gap-2"> 
+      <label className="relative mb-5 cursor-pointer">
+            <input type="checkbox" value="" className="peer sr-only" />
+            <div className="peer h-5 w-9 rounded-full bg-gray-400 after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-indigo-900 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-200"></div>
+      </label>
+      </button>
     </header>
   );
 }
