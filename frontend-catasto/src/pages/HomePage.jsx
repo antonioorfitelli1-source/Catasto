@@ -149,3 +149,5 @@ function LoadTheme () {
     document.documentElement.classList.remove(dark);
   }
 }
+
+LoadTheme()
