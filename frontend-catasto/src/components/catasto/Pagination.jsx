@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import '../../App.css';
 
 export default function Pagination({ page, totalPages, loading, handlePageChange }) {
   if (totalPages <= 0) return null;
