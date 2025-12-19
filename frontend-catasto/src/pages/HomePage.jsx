@@ -8,6 +8,17 @@ import { useCatastoFilters } from '../hooks/useCatastoFilters';
 import { useCatastoData } from '../hooks/useCatastoData';
 import { useCatastoSidebar } from '../hooks/useCatastoSidebar';
 
+function LoadTheme () {
+  const theme = localStorage.getItem('theme');
+  if (theme) {
+    document.documentElement.classList.add(dark);
+  } else {
+    document.documentElement.classList.remove(dark);
+  }
+}
+
+LoadTheme()
+
 export default function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth >= 768);
   const tableRowsRef = useRef({});
@@ -141,13 +152,3 @@ export default function HomePage() {
   );
 }
 
-function LoadTheme () {
-  const theme = localStorage.getItem('theme');
-  if (theme) {
-    document.documentElement.classList.add(dark);
-  } else {
-    document.documentElement.classList.remove(dark);
-  }
-}
-
-LoadTheme()
