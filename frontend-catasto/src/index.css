@@ -14,12 +14,14 @@
  --color-skin-text-inverted: var(--color-text-inverted);
  --color-skin-text-accent: var(--color-text-accent);
  --color-skin-border: var(--color-border);
- --color-skin-border-dark: var(--color-border-dark)
+ --color-skin-border-dark: var(--color-border-dark);
  --color-skin-sidebar-selected: var(--color-bg-sidebar-selected);
  --color-skin-text-selected: var(--color-text-selected);
  --color-skin-display: var(--color-bg-display);
  --color-skin-table-row: var(--color-bg-table-row);
  --color-skin-table-row-hover: var(--color-bg-table-row-hover);
+ --color-skin-table-header: var(--color-bg-table-header);
+ --color-skin-border-light: var(--color-border-light);
 }
 :root {
   
@@ -33,7 +35,9 @@
   --color-bg-sidebar-selected: #8b4513;
 
   --color-bg-table-row: #f8f5f2;
-  --color-bg-table-row-hover: #ff0000;
+  --color-bg-table-row-hover: #f0ece6;
+  --color-bg-table-header: #f0ece6;
+  --color-border-light: #e5e0d8;
 
   --color-text-main: #2c1810;
   --color-text-inverted: #f8f5f2;
@@ -75,10 +79,12 @@
   --color-bg-header-accent: #8f3e00;
   --color-bg-header-border: #2a1506;
 
-  --color-bg-table-row: #413f3e;
-  --color-bg-table-row-hover: #ff0000;
-
   --color-bg-display: #000000;
+
+  --color-bg-table-row: #413f3e;
+  --color-bg-table-row-hover: #2d241d;
+  --color-bg-table-header: #2d241d;
+  --color-border-light: #3d2b1f;
 
   --color-text-main: #ffffff;
   --color-text-inverted: #1a1512;
