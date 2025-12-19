@@ -20,7 +20,8 @@
  --color-skin-table-row: var(--color-bg-table-row);
  --color-skin-table-row-hover: var(--color-bg-table-row-hover);
  --color-skin-table-header: var(--color-bg-table-header);
- --color-skin-sidebar-selected-hover: var(--color-bg-sidebar-selected-hover);
+ --color-skin-border-light: var(--color-border-light);
+ --color-skin-border-row-expanded: var(--color-border-row-expanded);
 }
 :root {
   
@@ -33,7 +34,9 @@
   --color-bg-header-border: #5d2e0c;
   --color-bg-display: #f8f5f2;
   --color-bg-sidebar-selected: #8b4513;
-  --color-bg-sidebar-selected-hover: #af6128;
+
+  --color-border-row-expanded: #f19500;
+  --color-border-light: #e5e0d8;
 
   --color-bg-table-row: #f8f5f2;
   --color-bg-table-row-hover: #d3b5ad;
@@ -94,6 +97,9 @@
 
   --color-border: #3d2b1f;
   --color-border-dark: #2a1506;
+
+  --color-bg-sidebar-selected: #790000;
+  --color-border-row-expanded: #cc530d;
 
   --color-item-hover: #d0ff00;
   --color-item-selected: #4a250a;
