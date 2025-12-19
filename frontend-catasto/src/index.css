@@ -47,7 +47,7 @@
   --color-border: #d3c4b1;
   --color-border-dark: #5d2e0c;
 
-  --color-item-hover: #e6dbcf;
+  --color-item-hover: #cc530d;
   --color-item-selected: #8b4513;
 
   background-color: var(--color-bg-main);
@@ -98,3 +98,27 @@
   --color-item-selected: #4a250a;
   background-color: var(--color-bg-main);
   color: var(--color-text-main);}
+
+.star {
+  box-shadow: 0 0 5px 1px white;
+}
+
+.slider-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 10px 10px, white, transparent),
+    radial-gradient(1px 1px at 30px 5px, white, transparent),
+    radial-gradient(1px 1px at 50px 15px, white, transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.peer:checked ~ .slider-wrapper::before {
+  opacity: 0.3;
+}
+

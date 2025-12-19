@@ -26,28 +26,33 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen, darkMode, togg
           <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"></span>
           <span className="hidden sm:inline">Server</span> Live
         </div>
-        <label className="relative inline-flex items-center cursor-pointer group flex-shrink-0">
-            <input 
-              type="checkbox" 
-              checked={darkMode} 
-              onChange={() => toggleDarkMode(!darkMode)}
-              className="sr-only peer" 
-            />
-          <span className="slider">
-    <div className="star star_1"></div>
-    <div className="star star_2"></div>
-    <div className="star star_3"></div>
-    <svg viewBox="0 0 16 16" className="cloud_1 cloud">
-      <path
-        transform="matrix(.77976 0 0 .78395-299.99-418.63)"
-        fill="#fff"
-        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
-      ></path>
-    </svg>
-  </span>
+        <label className="relative inline-flex items-center cursor-pointer group flex-shrink-0 ml-2">
+          <input 
+            type="checkbox" 
+            checked={darkMode} 
+            onChange={() => toggleDarkMode(!darkMode)}
+            className="sr-only peer" 
+          />
+          <span className="slider-wrapper relative w-14 h-7 bg-[#94b0b7] rounded-full overflow-hidden transition-all duration-500 peer-checked:bg-[#202128]">
+            {/* Sun/Moon */}
+            <div className="absolute top-1 left-1 w-5 h-5 bg-[#ffde7b] rounded-full transition-all duration-500 z-10 peer-checked:translate-x-7 peer-checked:bg-[#f3f3f3] peer-checked:shadow-[inset_0px_0px_2px_1px_#dadada,0px_0px_10px_2px_#ffffffa4]">
+              {/* Moon craters */}
+              <div className="absolute top-1 left-2 w-1.5 h-1.5 bg-[#dadada] rounded-full opacity-0 transition-opacity duration-500 peer-checked:opacity-100"></div>
+              <div className="absolute top-3 left-1 w-1 h-1 bg-[#dadada] rounded-full opacity-0 transition-opacity duration-500 peer-checked:opacity-100"></div>
+              <div className="absolute top-2 left-3 w-1 h-1 bg-[#dadada] rounded-full opacity-0 transition-opacity duration-500 peer-checked:opacity-100"></div>
+            </div>
+            {/* Stars */}
+            <div className="star star_1 absolute top-1 left-3 w-0.5 h-0.5 bg-white rounded-full opacity-0 transition-all duration-500 peer-checked:opacity-100 peer-checked:translate-x-4"></div>
+            <div className="star star_2 absolute top-3 left-5 w-1 h-1 bg-white rounded-full opacity-0 transition-all duration-500 peer-checked:opacity-100 peer-checked:translate-x-3"></div>
+            <div className="star star_3 absolute top-5 left-2 w-0.5 h-0.5 bg-white rounded-full opacity-0 transition-all duration-500 peer-checked:opacity-100 peer-checked:translate-x-5"></div>        
+            {/* Clouds */}
+            <svg viewBox="0 0 16 16" className="absolute -bottom-1 left-1 w-10 h-10 transition-all duration-500 peer-checked:-translate-x-10 opacity-100">
+              <path fill="#fff" d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925" transform="matrix(.77976 0 0 .78395-299.99-418.63)"></path>
+            </svg>
+          </span>
+        </label>
+      </div>
     </div>
-      </div>   
-    </label>      
-    </header>
-  );
+  </header>
+);
 }
