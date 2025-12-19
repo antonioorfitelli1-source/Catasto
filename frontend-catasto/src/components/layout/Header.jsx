@@ -1,12 +1,14 @@
 import React from "react";
 import { Menu, X, Scroll } from "lucide-react";
 
-document.documentElement.classList.toggle(
-  "dark",
-  localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-);
+const [darkMode, setDarkMode] = useState(() => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme) {
+    return savedTheme === "dark";
+  }
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+});
 
 export default function Header({
   isSidebarOpen,
@@ -51,13 +53,7 @@ export default function Header({
               <input
                 type="checkbox"
                 checked={darkMode}
-                onChange={() => {
-                  if (darkMode === false) {
-                    toggleDarkMode(true);
-                  } else {
-                    toggleDarkMode(false);
-                  }
-                }}
+                onChange={() => toggleDarkMode(!darkMode)}
                 className="sr-only"
               />
               <span className="slider"></span>
