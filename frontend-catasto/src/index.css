@@ -118,11 +118,11 @@
 /* The slider */
 .slider {
   --background: #28096b;
-  position: static;
+  position: absolute;
   cursor: pointer;
-  top: 0;
+  top: 30px;
   left: 0;
-  right: 0;
+  right: 30px;
   bottom: 0;
   background-color: var(--background);
   transition: .5s;
