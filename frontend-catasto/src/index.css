@@ -64,7 +64,6 @@ body {
   --color-item-hover: #2d241d;
   --color-item-selected: #4a250a;
   background-color: var(--color-bg-main);
-  color: var(--color-text-main);
+  color: var(--color-text-main);}
 }
-
-
+}
