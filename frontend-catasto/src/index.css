@@ -91,15 +91,15 @@
   --color-border-light: #3d2b1f;
   --color-divider: #3d2b1f;
 
+  --color-bg-sidebar-selected: #790000;
+  --color-border-row-expanded: #cc530d;
+
   --color-text-main: #ffffff;
-  --color-text-inverted: #1a1512;
+  --color-text-inverted: #ffffff;
   --color-text-accent: #e6c288;
 
   --color-border: #3d2b1f;
   --color-border-dark: #2a1506;
-
-  --color-bg-sidebar-selected: #790000;
-  --color-border-row-expanded: #cc530d;
 
   --color-item-hover: #d0ff00;
   --color-item-selected: #4a250a;
