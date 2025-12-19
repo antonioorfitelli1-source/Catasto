@@ -93,7 +93,7 @@
   --color-border: #3d2b1f;
   --color-border-dark: #2a1506;
 
-  --color-item-hover: #2d241d;
+  --color-item-hover: #d0ff00;
   --color-item-selected: #4a250a;
   background-color: var(--color-bg-main);
   color: var(--color-text-main);}
