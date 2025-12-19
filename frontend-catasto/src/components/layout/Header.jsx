@@ -8,7 +8,7 @@ export default function Header({
   toggleDarkMode,
 }) {
   return (
-    <header className="bg-skin-header text-skin-text-inverted shadow-md border-b-4 border-skin-header-border flex-shrink-0 z-20 h-16 md:h-20 transition-all">
+    <header className="bg-skin-header text-skin-text-inverted shadow-md border-b-4 border-skin-header-border shrink-0 z-20 h-16 md:h-20 transition-all">
       <div className="w-full px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         <div className="flex items-center gap-2 md:gap-3">
           {/* Tasto Menu Mobile */}
@@ -39,7 +39,7 @@ export default function Header({
             <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"></span>
             <span className="hidden sm:inline">Server</span> Live
           </div>
-          <div className="switch flex-shrink-0">
+          <div className="switch shrink-0">
             <label className="relative inline-block w-[3.5em] h-[2em] cursor-pointer">
               <input
                 type="checkbox"

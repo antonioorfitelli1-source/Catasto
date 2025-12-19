@@ -153,7 +153,7 @@ const CatastoRow = forwardRef(
                     </div>
                     <div className="pt-2 border-t border-dashed border-gray-300 space-y-2">
                       <div className="flex items-start gap-2">
-                        <PawPrint className="h-4 w-4 text-skin-header mt-0.5 flex-shrink-0" />
+                        <PawPrint className="h-4 w-4 text-skin-header mt-0.5 shrink-0" />
                         <div>
                           <span className="text-[10px] md:text-xs text-gray-500 uppercase block">
                             Bestiame
@@ -162,7 +162,7 @@ const CatastoRow = forwardRef(
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <Flag className="h-4 w-4 text-skin-header mt-0.5 flex-shrink-0" />
+                        <Flag className="h-4 w-4 text-skin-header mt-0.5 shrink-0" />
                         <div>
                           <span className="text-[10px] md:text-xs text-gray-500 uppercase block">
                             Immigrazione
@@ -171,7 +171,7 @@ const CatastoRow = forwardRef(
                         </div>
                       </div>
                       <div className="flex items-start gap-2">
-                        <Hammer className="h-4 w-4 text-skin-header mt-0.5 flex-shrink-0" />
+                        <Hammer className="h-4 w-4 text-skin-header mt-0.5 shrink-0" />
                         <div>
                           <span className="text-[10px] md:text-xs text-gray-500 uppercase block">
                             Rapporto Mestiere

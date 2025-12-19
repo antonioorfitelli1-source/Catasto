@@ -115,11 +115,11 @@ export default React.memo(function Sidebar({
         `}
       >
         <div
-          className="p-4 bg-skin-sidebar-header border-b border-skin-border flex items-center justify-between whitespace-nowrap overflow-hidden flex-shrink-0"
+          className="p-4 bg-skin-sidebar-header border-b border-skin-border flex items-center justify-between whitespace-nowrap overflow-hidden shrink-0"
           style={{ height: "60px" }}
         >
           <h3 className="font-bold text-skin-border-dark uppercase text-xs tracking-wider flex items-center gap-2">
-            <List className="h-4 w-4 flex-shrink-0" /> Indice
+            <List className="h-4 w-4 shrink-0" /> Indice
           </h3>
           <button
             onClick={() => setIsSidebarOpen(false)}

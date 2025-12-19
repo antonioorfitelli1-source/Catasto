@@ -28,7 +28,7 @@ export default function FilterPanel({
 
   return (
     <div className="bg-skin-table-row rounded-sm shadow-lg border border-skin-border mb-6 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-skin-header to-skin-header-accent"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-skin-header to-skin-header-accent"></div>
         <div className="p-4 md:p-6">
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-end mb-4">
             <div className="flex-1 w-full">
