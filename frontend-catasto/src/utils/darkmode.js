@@ -1,4 +1,4 @@
-document
+export const darkMode = document
   .getElementsByClassName("dark")[0]
   .classList.toggle(
     "dark",
