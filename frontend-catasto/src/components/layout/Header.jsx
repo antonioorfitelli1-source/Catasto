@@ -26,7 +26,7 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen, darkMode, togg
           <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"></span>
           <span className="hidden sm:inline">Server</span> Live
         </div>
-        <div className="flex items-center gap-2"><label className="relative inline-flex items-center cursor-pointer group flex-shrink-0 ml-2">
+        <label className="relative inline-flex items-center cursor-pointer group flex-shrink-0 ml-2">
           <input 
             type="checkbox" 
             checked={darkMode} 
@@ -34,7 +34,7 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen, darkMode, togg
             className="sr-only" 
           /> 
           <span className="slider"></span>
-        </label></div>
+        </label>
       </div>
     </div>
   </header>
