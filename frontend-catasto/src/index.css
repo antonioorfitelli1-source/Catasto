@@ -50,7 +50,7 @@ body {
   padding: 0;
 }
 
-.darkMode {
+.dark {
   color-scheme: dark;
   --color-bg-main: #1a1512;
   --color-bg-sidebar: #241d18;
