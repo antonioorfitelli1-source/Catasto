@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+@theme light {
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -47,6 +48,7 @@ body {
   padding: 0;
 }
 
+@theme dark {
 .dark {
   color-scheme: dark;
   --color-bg-main: #000000;
