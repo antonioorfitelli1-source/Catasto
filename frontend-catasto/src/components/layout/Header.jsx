@@ -26,15 +26,15 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen, darkMode, togg
           <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-green-500 animate-pulse"></span>
           <span className="hidden sm:inline">Server</span> Live
         </div>
-        <label className="relative inline-flex items-center cursor-pointer">
+        <label className="relative inline-flex items-center cursor-pointer group flex-shrink-0">
             <input 
               type="checkbox" 
               checked={darkMode} 
               onChange={() => toggleDarkMode(!darkMode)}
               className="sr-only peer" 
             />
-            <div className="peer h-5 w-9 rounded-full bg-gray-400 after:absolute after:top-[2px] after:left-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-indigo-900 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-200"></div>
-            <span className="ml-2 text-[10px] md:text-xs text-skin-text-accent">Dark Mode</span>
+            <div className="w-11 h-6 bg-gray-400 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-5 peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-900 shadow-inner"></div>
+            <span className="ml-2 text-[10px] md:text-xs text-skin-text-accent font-bold hidden sm:inline">Dark Mode</span>
           </label>
     </div>
       </div>   
