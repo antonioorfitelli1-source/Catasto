@@ -23,12 +23,16 @@ const CatastoRow = forwardRef(
           ref={ref}
           onClick={() => onRowClick(row.id)}
           className={`cursor-pointer transition-colors border-b border-skin-border-light ${
-            expanded
-              ? "bg-skin-sidebar border-l-4 border-l-skin-border-row-expanded"
-              : "hover:bg-skin-table-row-hover"
+            expanded ? "bg-skin-sidebar" : "hover:bg-skin-table-row-hover"
           }`}
         >
-          <td className="px-3 py-3 md:px-6 md:py-4">
+          <td
+            className={`px-3 py-3 md:px-6 md:py-4 ${
+              expanded
+                ? "border-l-4 border-l-skin-border-row-expanded"
+                : "border-l-4 border-l-transparent"
+            }`}
+          >
             <div className="flex flex-col justify-center">
               <div className="text-base md:text-lg font-medium text-skin-text font-serif leading-tight">
                 {row.nome}
