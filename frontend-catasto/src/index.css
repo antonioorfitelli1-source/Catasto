@@ -47,3 +47,5 @@ body {
   margin: 0;
   padding: 0;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
