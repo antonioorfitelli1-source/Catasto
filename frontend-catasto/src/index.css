@@ -21,6 +21,7 @@
  --color-skin-table-row-hover: var(--color-bg-table-row-hover);
  --color-skin-table-header: var(--color-bg-table-header);
  --color-skin-border-light: var(--color-border-light);
+ --color-skin-divider: var(--color-divider);
 }
 :root {
   
@@ -87,6 +88,7 @@
   --color-bg-table-row-hover: #2d241d;
   --color-bg-table-header: #2d241d;
   --color-border-light: #3d2b1f;
+  --color-divider: #3d2b1f;
 
   --color-text-main: #ffffff;
   --color-text-inverted: #1a1512;
