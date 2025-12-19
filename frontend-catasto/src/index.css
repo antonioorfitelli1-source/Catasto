@@ -9,8 +9,8 @@
   color-scheme: light;
 
   /* Color Palette */
-  --color-bg-main: #f8f5f2;
-  --color-bg-sidebar: #fffbf5;
+  --color-bg-main: #000000;
+  --color-bg-sidebar: #553301;
   --color-bg-header: #8b4513;
   --color-bg-header-accent: #6e360f;
   --color-bg-header-border: #5d2e0c;
@@ -49,10 +49,10 @@ body {
 
 .dark {
   color-scheme: dark;
-  --color-bg-main: #1a1512;
+  --color-bg-main: #000000;
   --color-bg-sidebar: #241d18;
-  --color-bg-header: #4a250a;
-  --color-bg-header-accent: #3d1f08;
+  --color-bg-header: #205009;
+  --color-bg-header-accent: #8f3e00;
   --color-bg-header-border: #2a1506;
   --color-text-main: #e6dbcf;
   --color-text-inverted: #1a1512;
