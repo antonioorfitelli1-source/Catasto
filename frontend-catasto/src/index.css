@@ -17,6 +17,7 @@
  --color-skin-border-dark: var(--color-border-dark)
  --color-skin-sidebar-selected: var(--color-bg-sidebar-selected);
  --color-skin-text-selected: var(--color-text-selected);
+ --color-skin-display: var(--color-bg-display);
 }
 :root {
   
@@ -26,8 +27,9 @@
   --color-bg-header: #8b4513;
   --color-bg-header-accent: #6e360f;
   --color-bg-header-border: #5d2e0c;
-
+  --color-bg-display: #f8f5f2;
   --color-bg-sidebar-selected: #8b4513;
+
   --color-text-main: #2c1810;
   --color-text-inverted: #f8f5f2;
   --color-text-accent: #e6c288;
@@ -64,14 +66,19 @@
 
   --color-bg-main: #000000;
   --color-bg-sidebar: #241d18;
-  --color-bg-header: #205009;
+  --color-bg-header: #790000;
   --color-bg-header-accent: #8f3e00;
   --color-bg-header-border: #2a1506;
-  --color-text-main: #e6dbcf;
+
+  --color-bg-display: #000000;
+
+  --color-text-main: #ffffff;
   --color-text-inverted: #1a1512;
   --color-text-accent: #e6c288;
+
   --color-border: #3d2b1f;
   --color-border-dark: #2a1506;
+
   --color-item-hover: #2d241d;
   --color-item-selected: #4a250a;
   background-color: var(--color-bg-main);
