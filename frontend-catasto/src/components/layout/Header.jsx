@@ -32,11 +32,8 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen, darkMode, togg
             checked={darkMode} 
             onChange={() => toggleDarkMode(!darkMode)}
             className="sr-only" 
-          />
-          <label className="switch">
-            <input type="checkbox" /> 
-            <span className="slider"></span>
-          </label>
+          /> 
+          <span className="slider"></span>
         </label>
       </div>
     </div>
