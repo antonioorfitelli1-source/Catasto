@@ -1,12 +1,12 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 @theme light {
-
+}
+body {
+  
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-}
-body {
   /* Color Palette */
   --color-bg-main: #f3ebe2;
   --color-bg-sidebar: #422800;
@@ -45,14 +45,14 @@ body {
 }
 
 @custom-variant dark {
+}
+
+body.dark {
   
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: dark;
-}
-
-body.dark {
+  
   --color-bg-main: #000000;
   --color-bg-sidebar: #241d18;
   --color-bg-header: #205009;
