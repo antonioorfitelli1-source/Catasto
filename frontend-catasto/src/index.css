@@ -118,7 +118,7 @@
 /* The slider */
 .slider {
   --background: #28096b;
-  position: relative;
+  position: static;
   cursor: pointer;
   top: 0;
   left: 0;
@@ -130,7 +130,7 @@
 }
 
 .slider:before {
-  position: relative;
+  position: static;
   content: "";
   height: 1.4em;
   width: 1.4em;
