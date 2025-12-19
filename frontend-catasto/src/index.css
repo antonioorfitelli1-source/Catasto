@@ -50,4 +50,22 @@ body {
   padding: 0;
 }
 
+.darkMode {
+  color-scheme: dark;
+  --color-bg-main: #1a1512;
+  --color-bg-sidebar: #241d18;
+  --color-bg-header: #4a250a;
+  --color-bg-header-accent: #3d1f08;
+  --color-bg-header-border: #2a1506;
+  --color-text-main: #e6dbcf;
+  --color-text-inverted: #1a1512;
+  --color-text-accent: #e6c288;
+  --color-border: #3d2b1f;
+  --color-border-dark: #2a1506;
+  --color-item-hover: #2d241d;
+  --color-item-selected: #4a250a;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
 
