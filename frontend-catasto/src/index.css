@@ -76,35 +76,46 @@
 .dark {
   color-scheme: dark;
 
-  --color-bg-main: #000000;
-  --color-bg-sidebar: #241d18;
-  --color-bg-sidebar-header: #241d18;
-  --color-bg-header: #790000;
-  --color-bg-header-accent: #8f3e00;
-  --color-bg-header-border: #2a1506;
+  /* Main Backgrounds - Modern Warm Dark Grey (Stone) */
+  --color-bg-main: #1c1917;       /* Stone 950 */
+  --color-bg-sidebar: #292524;    /* Stone 900 */
+  --color-bg-sidebar-header: #292524;
 
-  --color-bg-display: #000000;
+  /* Header - Deep Warm Tone */
+  --color-bg-header: #2b1d16;     
+  --color-bg-header-accent: #432818; 
+  --color-bg-header-border: #13100d; 
 
-  --color-bg-table-row: #444138;
-  --color-bg-table-row-hover: #2d241d;
-  --color-bg-table-header: #2d241d;
-  --color-border-light: #3d2b1f;
-  --color-divider: #3d2b1f;
+  --color-bg-display: #1c1917;
 
-  --color-bg-sidebar-selected: #790000;
-  --color-border-row-expanded: #cc530d;
+  /* Table */
+  --color-bg-table-row: #292524;
+  --color-bg-table-row-hover: #44403c; /* Stone 700 */
+  --color-bg-table-header: #44403c;
+  --color-border-light: #44403c;
+  --color-divider: #57534e;       /* Stone 600 */
 
-  --color-text-main: #ffffff;
-  --color-text-inverted: #ffffff;
-  --color-text-accent: #e6c288;
+  /* Selection & Accents */
+  --color-bg-sidebar-selected: #ea580c; /* Orange 600 - Vivid but warm */
+  --color-border-row-expanded: #f59e0b; /* Amber 500 */
 
-  --color-border: #3d2b1f;
-  --color-border-dark: #2a1506;
+  /* Text */
+  --color-text-main: #e7e5e4;     /* Stone 200 */
+  --color-text-inverted: #fafaf9; /* Stone 50 */
+  --color-text-accent: #fbbf24;   /* Amber 400 */
+  --color-text-selected: #ffffff; 
 
-  --color-item-hover: #d0ff00;
-  --color-item-selected: #4a250a;
+  /* Borders */
+  --color-border: #57534e;        /* Stone 600 */
+  --color-border-dark: #0c0a09;
+
+  /* Interactions */
+  --color-item-hover: #d97706;    /* Amber 600 */
+  --color-item-selected: #78350f; /* Amber 900 */
+  
   background-color: var(--color-bg-main);
-  color: var(--color-text-main);}
+  color: var(--color-text-main);
+}
 
 /* The switch - the box around the slider */
 .switch {
