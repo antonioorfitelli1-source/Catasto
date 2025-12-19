@@ -1,15 +1,6 @@
 import React from "react";
 import { Menu, X, Scroll } from "lucide-react";
 
-const [darkMode, setDarkMode] = useState(() => {
-  const savedTheme = localStorage.getItem("theme");
-
-  if (savedTheme) {
-    return savedTheme === "dark";
-  }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
-});
-
 export default function Header({
   isSidebarOpen,
   setIsSidebarOpen,
