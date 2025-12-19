@@ -21,8 +21,13 @@
  --color-skin-table-row-hover: var(--color-bg-table-row-hover);
  --color-skin-table-header: var(--color-bg-table-header);
  --color-skin-border-light: var(--color-border-light);
- --color-skin-border-row-expanded: var(--color-border-row-expanded);
+ --color-skin-border-row-expanded: var(--color-border-row-expanded, #8b4513);
 }
+
+.border-l-skin-border-row-expanded {
+  border-left-color: var(--color-border-row-expanded, #8b4513) !important;
+}
+
 :root {
   
   /* Color Palette */
@@ -35,7 +40,7 @@
   --color-bg-display: #f8f5f2;
   --color-bg-sidebar-selected: #8b4513;
 
-  --color-border-row-expanded: #f19500;
+  --color-border-row-expanded: #8b4513;
   --color-border-light: #8b4513;
 
   --color-bg-table-row: #f8f5f2;
@@ -50,7 +55,7 @@
   --color-border: #d3c4b1;
   --color-border-dark: #5d2e0c;
 
-  --color-item-hover: #cc530d;
+  --color-item-hover: #faf7f2;
   --color-item-selected: #8b4513;
 
   background-color: var(--color-bg-main);
