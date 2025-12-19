@@ -11,9 +11,9 @@ import { useCatastoSidebar } from '../hooks/useCatastoSidebar';
 function LoadTheme () {
   const theme = localStorage.getItem('theme');
   if (theme) {
-    document.documentElement.classList.add(dark);
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove(dark);
+    document.documentElement.classList.remove("dark");
   }
 }
 
