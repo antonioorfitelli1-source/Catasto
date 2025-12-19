@@ -2,7 +2,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @theme light {
 
-:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -49,7 +48,6 @@ body {
 }
 
 @theme dark {
-.dark {
   color-scheme: dark;
   --color-bg-main: #000000;
   --color-bg-sidebar: #241d18;
@@ -65,5 +63,3 @@ body {
   --color-item-selected: #4a250a;
   background-color: var(--color-bg-main);
   color: var(--color-text-main);}
-}
-}
