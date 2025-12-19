@@ -19,6 +19,7 @@
  --color-skin-text-selected: var(--color-text-selected);
  --color-skin-display: var(--color-bg-display);
  --color-skin-table-row: var(--color-bg-table-row);
+ --color-skin-table-row-hover: var(--color-bg-table-row-hover);
 }
 :root {
   
@@ -32,6 +33,7 @@
   --color-bg-sidebar-selected: #8b4513;
 
   --color-bg-table-row: #f8f5f2;
+  --color-bg-table-row-hover: #ff0000;
 
   --color-text-main: #2c1810;
   --color-text-inverted: #f8f5f2;
@@ -74,6 +76,7 @@
   --color-bg-header-border: #2a1506;
 
   --color-bg-table-row: #413f3e;
+  --color-bg-table-row-hover: #ff0000;
 
   --color-bg-display: #000000;
 
