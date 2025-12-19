@@ -18,6 +18,7 @@
  --color-skin-sidebar-selected: var(--color-bg-sidebar-selected);
  --color-skin-text-selected: var(--color-text-selected);
  --color-skin-display: var(--color-bg-display);
+ --color-skin-table-row: var(--color-bg-table-row);
 }
 :root {
   
