@@ -9,12 +9,12 @@
   color-scheme: light;
 
   /* Color Palette */
-  --color-bg-main: #f8f5f2;
+  --color-bg-main: #f3ebe2;
   --color-bg-sidebar: #422800;
   --color-bg-header: #8b4513;
   --color-bg-header-accent: #6e360f;
   --color-bg-header-border: #5d2e0c;
-
+  --color-sidebar-main: #422800;
   --color-text-main: #2c1810;
   --color-text-inverted: #f8f5f2;
   --color-text-accent: #e6c288;
