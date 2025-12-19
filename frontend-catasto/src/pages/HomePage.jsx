@@ -8,10 +8,10 @@ import { useCatastoData } from '../hooks/useCatastoData';
 import { useCatastoSidebar } from '../hooks/useCatastoSidebar';
 
 export const darkMode = document
-  .getElementsByClassName("dark")[0]
+  .getElementsByClassName('dark')[0]
   .classList.toggle(
-    "dark",
-    localStorage.theme === "dark" ||
+    'dark',
+    localStorage.theme === 'dark' ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
   );
