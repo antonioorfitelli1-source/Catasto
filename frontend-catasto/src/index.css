@@ -11,6 +11,10 @@
  --color-skin-sidebar-main: var(--color-sidebar-main);
  --color-skin-item-hover: var(--color-item-hover);
  --color-skin-item-selected: var(--color-item-selected);
+ --color-skin-text-inverted: var(--color-text-inverted);
+ --color-skin-text-accent: var(--color-text-accent);
+ --color-skin-border: var(--color-border);
+ --color-skin-border-dark: var(--color-border-dark)
 }
 :root {
   
