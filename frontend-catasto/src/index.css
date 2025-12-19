@@ -30,6 +30,8 @@
   --color-bg-display: #f8f5f2;
   --color-bg-sidebar-selected: #8b4513;
 
+  --color-bg-table-row: #f8f5f2;
+
   --color-text-main: #2c1810;
   --color-text-inverted: #f8f5f2;
   --color-text-accent: #e6c288;
@@ -69,6 +71,8 @@
   --color-bg-header: #790000;
   --color-bg-header-accent: #8f3e00;
   --color-bg-header-border: #2a1506;
+
+  --color-bg-table-row: #413f3e;
 
   --color-bg-display: #000000;
 
