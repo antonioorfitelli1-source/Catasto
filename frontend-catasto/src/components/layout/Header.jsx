@@ -36,11 +36,11 @@ export default function Header({ isSidebarOpen, setIsSidebarOpen, darkMode, togg
           {/* dark mode switch implementation */}
           <span className="slider-wrapper relative w-14 h-7 bg-[#94b0b7] rounded-full overflow-hidden transition-all duration-500 group-has-[:checked]:bg-[#202128]">
             {/* Sun/Moon */}
-            <div className="absolute top-1 left-1 w-5 h-5 bg-[#ffde7b] rounded-full transition-all duration-500 z-10 group-has-[:checked]:translate-x-7 group-has-[:checked]:bg-[#f3f3f3] group-has-[:checked]:shadow-[inset_0px_0px_2px_1px_#dadada,0px_0px_10px_2px_#ffffffa4]">
-              {/* Moon craters */}
-              <div className="absolute top-1 left-2 w-1.5 h-1.5 bg-[#dadada] rounded-full opacity-0 transition-opacity duration-500 group-has-[:checked]:opacity-100"></div>
-              <div className="absolute top-3 left-1 w-1 h-1 bg-[#dadada] rounded-full opacity-0 transition-opacity duration-500 group-has-[:checked]:opacity-100"></div>
-              <div className="absolute top-2 left-3 w-1 h-1 bg-[#dadada] rounded-full opacity-0 transition-opacity duration-500 group-has-[:checked]:opacity-100"></div>
+            <div className="absolute top-1 left-1 w-5 h-5 bg-[#ffde7b] rounded-full transition-all duration-500 z-10 group-has-[:checked]:translate-x-7 group-has-[:checked]:bg-[#fef9f3] group-has-[:checked]:shadow-[inset_0px_0px_2px_1px_#dadada,0px_0px_10px_2px_#ffffffa4]">
+              {/* Moon craters - much more visible now */}
+              <div className="absolute top-1 left-2 w-1.5 h-1.5 bg-[#e5e5e5] rounded-full opacity-0 transition-opacity duration-500 group-has-[:checked]:opacity-100 shadow-inner"></div>
+              <div className="absolute top-3 left-1 w-1 h-1 bg-[#e5e5e5] rounded-full opacity-0 transition-opacity duration-500 group-has-[:checked]:opacity-100 shadow-inner"></div>
+              <div className="absolute top-2 left-3 w-1 h-1 bg-[#e5e5e5] rounded-full opacity-0 transition-opacity duration-500 group-has-[:checked]:opacity-100 shadow-inner"></div>
             </div>
             
             {/* Stars */}
