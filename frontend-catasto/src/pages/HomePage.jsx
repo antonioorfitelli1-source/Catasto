@@ -8,11 +8,6 @@ import { useCatastoFilters } from '../hooks/useCatastoFilters';
 import { useCatastoData } from '../hooks/useCatastoData';
 import { useCatastoSidebar } from '../hooks/useCatastoSidebar';
 
-document.getElementsByClassName("dark")[0].classList.toggle(
-  "dark",
-   localStorage.theme === "dark" ||
-    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches));
-
 export default function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth >= 768);
   const tableRowsRef = useRef({});
