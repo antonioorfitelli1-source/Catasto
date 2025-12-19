@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 @theme light {
+  color-scheme: light;
+  color-skin-fill: var(--color-bg-main);
+  color-skin-text: var(--color-text-main);
+  color-skin-header: var(--color-bg-header);
+  color-skin-header-accent: var(--color-bg-header-accent);
+  color-skin-header-border: var(--color-bg-header-border);
+  color-skin-sidebar: var(--color-bg-sidebar);
+  color-skin-sidebar-main: var(--color-sidebar-main);
+  color-skin-item-hover: var(--color-item-hover);
+  color-skin-item-selected: var(--color-item-selected);
 }
 body {
   
@@ -45,14 +55,23 @@ body {
 }
 
 @custom-variant dark {
+  color-scheme: dark;
+  color-skin-fill: var(--color-bg-main);
+  color-skin-text: var(--color-text-main);
+  color-skin-header: var(--color-bg-header);
+  color-skin-header-accent: var(--color-bg-header-accent);
+  color-skin-header-border: var(--color-bg-header-border);
+  color-skin-sidebar: var(--color-bg-sidebar);
+  color-skin-sidebar-main: var(--color-sidebar-main);
+  color-skin-item-hover: var(--color-item-hover);
+  color-skin-item-selected: var(--color-item-selected);
 }
-
-body.dark {
+body.dark{
   
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
+
   --color-bg-main: #000000;
   --color-bg-sidebar: #241d18;
   --color-bg-header: #205009;
