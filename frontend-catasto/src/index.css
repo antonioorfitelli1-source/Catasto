@@ -5,9 +5,8 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light;
-
+}
+body {
   /* Color Palette */
   --color-bg-main: #f3ebe2;
   --color-bg-sidebar: #422800;
@@ -32,9 +31,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -47,8 +44,15 @@ body {
   padding: 0;
 }
 
-@theme dark {
+@custom-variant dark {
+  
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
   color-scheme: dark;
+}
+
+body.dark {
   --color-bg-main: #000000;
   --color-bg-sidebar: #241d18;
   --color-bg-header: #205009;
